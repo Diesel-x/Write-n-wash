@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Write_Wash.Models;
 using Write_Wash.Models.DBContext;
 
 namespace Write_Wash.Data
@@ -15,7 +14,7 @@ namespace Write_Wash.Data
 
         public DbSet<ProductContext> Product { get; set; }
 
-        public DbSet<ManufacturesContext> Manufactures { get; set; }
+        public DbSet<ManufacturesContext> Manufacturers { get; set; }
 
         public DbSet<PointContext> Point { get; set; }
 

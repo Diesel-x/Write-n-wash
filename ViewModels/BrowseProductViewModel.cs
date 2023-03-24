@@ -35,8 +35,8 @@ namespace Write_Wash.ViewModels
         private readonly ProductService _productService;
         public List<Product> Products { get; set; }
 
-        public int MaxProd { get; set; }
-        public int CurrentProd { get; set; }
+        public int MaxProducts { get; set; }
+        public int CurrentProduct { get; set; }
 
         public ObservableCollection<string> Sorts { get; set; }
         public ObservableCollection<string> Filtre { get; set; }
@@ -58,8 +58,8 @@ namespace Write_Wash.ViewModels
             Task.Run(async () =>
             {
                 Products = await _productService.GetProducts();
-                MaxProd = Products.Count();
-                CurrentProd = Products.Count();
+                MaxProducts = Products.Count();
+                CurrentProduct = Products.Count();
                 CheckNullProduct();
                 OrderEllipseCheck();
                 if (OrderEllipse == Visibility.Visible) { OrderProductCount = Global.OrderProductList.Count().ToString(); }
@@ -83,7 +83,7 @@ namespace Write_Wash.ViewModels
 
         void CheckNullProduct()
         {
-            if (CurrentProd > 0) { NullProduct = Visibility.Hidden; } else { NullProduct = Visibility.Visible; }
+            if (CurrentProduct > 0) { NullProduct = Visibility.Hidden; } else { NullProduct = Visibility.Visible; }
         }
 
         public string Pattern
@@ -126,7 +126,7 @@ namespace Write_Wash.ViewModels
         public async void UpdateProduct()
         {
             var currentProduct = await _productService.GetProducts();
-            MaxProd = currentProduct.Count;
+            MaxProducts = currentProduct.Count;
 
             if (!string.IsNullOrEmpty(SelectedFiltre))
             {
@@ -157,7 +157,7 @@ namespace Write_Wash.ViewModels
                         break;
                 }
             }
-            CurrentProd = currentProduct.Count;
+            CurrentProduct = currentProduct.Count;
             Products = currentProduct;
             CheckNullProduct();
 

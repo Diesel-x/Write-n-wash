@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
-using Write_Wash.Models;
 
 namespace Write_Wash.Services
 {
@@ -26,7 +25,7 @@ namespace Write_Wash.Services
                 {
                     List<ProductContext> product = await _context.Product.ToListAsync();
                     
-                    List<ManufacturesContext> pmanufactures = await _context.Manufactures.ToListAsync();
+                    List<ManufacturesContext> pmanufactures = await _context.Manufacturers.ToListAsync();
 
                     foreach (var item in product)
                     {
@@ -35,9 +34,9 @@ namespace Write_Wash.Services
                             Image = item.ProductPhoto == string.Empty ? "picture.png" : item.ProductPhoto,
                             Title = item.ProductName,
                             Description = item.ProductDescription,
-                            Manufacturer = pmanufactures.SingleOrDefault(pm => pm.idManufactures == item.ProductManufacturer).NameManufactures,
+                            Manufacturer = pmanufactures.SingleOrDefault(pm => pm.idmanufacturer == item.ProductManufacturer).name,
                             Price = item.ProductCost,
-                            Discount = item.CurrentDiscount,
+                            Discount = item.ProductDiscountAmount,
                             ProductCount = 1
                         }); 
                     }

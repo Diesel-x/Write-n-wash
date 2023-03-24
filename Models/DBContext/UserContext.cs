@@ -12,7 +12,7 @@ namespace Write_Wash.Models.DBContext
     public class UserContext : DbContext
     {
         [Key]
-        public int UserId { get; set; }
+        public int UserID { get; set; }
         public string UserSurName { get; set; }
         public string UserName { get; set; }
         public string UserPatronymic { get; set; }

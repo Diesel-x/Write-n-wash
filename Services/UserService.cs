@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Write_Wash.Data;
-using Write_Wash.Models;
 
 namespace Write_Wash.Services
 {
@@ -25,7 +23,7 @@ namespace Write_Wash.Services
             {
                 Global.CurrentUser = new User
                 {
-                    Id = user.UserId,
+                    Id = user.UserID,
                     Name = user.UserName,
                     Surname = user.UserSurName,
                     Patronymic = user.UserPatronymic,

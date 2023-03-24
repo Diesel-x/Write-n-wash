@@ -16,9 +16,9 @@ namespace Write_Wash.Models.DBContext
         public string ProductPhoto { get; set; }
         public int ProductManufacturer { get; set; }
         public int ProductCost { get; set; }
-        public int ProductMaxDiscountAmount { get; set; }
+        public int ProductMaxDiscount { get; set; }
         public int ProductQuantityInStock { get; set; }
-        public int CurrentDiscount { get; set; }
+        public int ProductDiscountAmount { get; set; }
         public string ProductUnit { get; set; }
         public int ProductDelivery { get; set; }
         

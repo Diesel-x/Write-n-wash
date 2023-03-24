@@ -1,6 +1,4 @@
-﻿
-
-namespace Write_Wash
+﻿namespace Write_Wash
 {
     internal class ViewModelLocator
     {
@@ -29,16 +27,12 @@ namespace Write_Wash
                 try
                 {
                     options.UseMySql(
-                    "server=localhost;user=root;password=2703123rrr;database=trade;",
-                     new MySqlServerVersion(new Version(8, 0, 30)));
-
+                    "server=localhost;user=root;password=lb2003zp;database=trade;",
+                     new MySqlServerVersion(new Version(8, 0, 32)));
                 }
                 catch (MySqlConnector.MySqlException)
                 {
-
-                    options.UseMySql(
-                    "server=localhost;user=root;password=2703123rrr;database=trade;",
-                     new MySqlServerVersion(new Version(8, 0, 30)));
+                    Process.GetCurrentProcess().Kill();
                 }
             }, ServiceLifetime.Transient);
 

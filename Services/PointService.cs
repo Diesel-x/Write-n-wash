@@ -26,11 +26,11 @@ namespace Write_Wash.Services
                     {
                         points.Add(new Points
                         {
-                            PointId = item.idPoint,
-                            PointIndex = item.PointIndex,
-                            PointCity = item.PointCity,
-                            PointStreet = item.PointStreet,
-                            PointHome = item.PointHome
+                            PointId = item.idpoints_of_issue,
+                            PointIndex = item.index,
+                            PointCity = item.city,
+                            PointStreet = item.street,
+                            PointHome = item.house_num
                         });
                     }
                 }

@@ -13,9 +13,9 @@ namespace Write_Wash.Services
         {
             _context = context;
         }
-        public async Task<List<Points>> GetPoints()
+        public async Task<List<PointContext>> GetPoints()
         {
-            List<Points> points = new();
+            List<PointContext> points = new();
 
             await Task.Run(async () =>
             {
@@ -24,13 +24,13 @@ namespace Write_Wash.Services
                     List<PointContext> point = await _context.Point.ToListAsync();
                     foreach (var item in point)
                     {
-                        points.Add(new Points
+                        points.Add(new PointContext
                         {
-                            PointId = item.idpoints_of_issue,
-                            PointIndex = item.index,
-                            PointCity = item.city,
-                            PointStreet = item.street,
-                            PointHome = item.house_num
+                            idpoints_of_issue = item.idpoints_of_issue,
+                            index = item.index,
+                            city = item.city,
+                            street = item.street,
+                            house_num = item.house_num
                         });
                     }
                 }

@@ -19,7 +19,7 @@ namespace Write_Wash.ViewModels
         public int CurrentProd { get; set; }
 
         
-        public List<Points> Points { get; set; }
+        public List<PointContext> Points { get; set; }
 
         public string _pattern;
 

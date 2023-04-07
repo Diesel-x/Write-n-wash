@@ -32,20 +32,20 @@ namespace Write_Wash.ViewModels
         {
             _pageService.ChangePage(new SignView());
         });
-        //public DelegateCommand Reg => new(() =>
-        //{
-        //    _context.User.Add(new UserContext
-        //    {
-        //        UserName = name,
-        //        UserSurName = surname,
-        //        UserPatronymic = patronymic,
-        //        UserLogin = login,
-        //        UserPassword = password,
-        //        UserRole = 2,
-        //        UserId = _context.User.Count() + 1
-        //    });
-        //    _context.SaveChanges();
-        //    _pageService.ChangePage(new SignView());
-        //});
+        public DelegateCommand Reg => new(() =>
+        {
+            _context.User.Add(new UserContext
+            {
+                UserName = name,
+                UserSurName = surname,
+                UserPatronymic = patronymic,
+                UserLogin = login,
+                UserPassword = password,
+                UserRole = 2,
+                UserID = _context.User.Count() + 1
+            });
+            _context.SaveChanges();
+            _pageService.ChangePage(new SignView());
+        });
     }
 }
